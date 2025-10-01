@@ -89,7 +89,7 @@ const Dashboard: React.FC = () => {
                 {timesheets.map((entry) => (
                   <tr key={entry.id} className="hover:bg-gray-50">
                     <td className="px-6 py-4 text-sm font-medium text-gray-900">{entry.week}</td>
-                    <td className="px-6 py-4 text-sm text-gray-500">{entry.dateRange}</td>
+                    <td className="px-6 py-4 text-sm text-gray-900">{entry.dateRange}</td>
                     <td className="px-6 py-4 text-sm">
                       <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusClasses(entry.status)}`}>{entry.status}</span>
                     </td>
@@ -108,9 +108,9 @@ const Dashboard: React.FC = () => {
       {modalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50">
           <div className="bg-white p-6 rounded shadow-lg w-full max-w-md">
-            <h2 className="text-xl font-bold mb-4">{editingEntry ? "Edit Timesheet" : "Add Timesheet"}</h2>
+            <h2 className="text-xl text-gray-900 font-bold mb-4">{editingEntry ? "Edit Timesheet" : "Add Timesheet"}</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <input type="number" placeholder="Week #" value={formData.week} onChange={(e) => setFormData({ ...formData, week: e.target.value })} required className="w-full border px-3 py-2 rounded" />
+              <input  type="number" placeholder="Week #" value={formData.week} onChange={(e) => setFormData({ ...formData, week: e.target.value })} required className="w-full border px-3 py-2 rounded" />
               <input type="text" placeholder="Date Range" value={formData.dateRange} onChange={(e) => setFormData({ ...formData, dateRange: e.target.value })} required className="w-full border px-3 py-2 rounded" />
               <select value={formData.status} onChange={(e) => setFormData({ ...formData, status: e.target.value })} className="w-full border px-3 py-2 rounded">
                 <option value="COMPLETED">COMPLETED</option>
