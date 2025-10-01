@@ -22,7 +22,7 @@ Includes a login page with "Remember Me", and a dashboard with "Add/Edit/Delete"
 => Setup Instructions
 1. Clone the repository  
 ```bash
-git clone <repo_url>
+git clone <https://github.com/SaladiLeeladhar/timesheet-app>
 cd timesheet-app ==> navigate into the folder
 npm install
 npm run dev
