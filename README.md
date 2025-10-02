@@ -33,7 +33,7 @@ Dummy login credentials: user@ticktock.com / password123
 Timesheet data is stored in-memory (no backend integration)
 All state is managed on the client-side
 
-Time Spent : 6 hours
+Time Spent : 5 hours
 
 
 ** ## Working Online Demo
