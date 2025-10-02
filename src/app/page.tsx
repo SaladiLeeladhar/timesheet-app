@@ -26,7 +26,7 @@ const Login: React.FC = () => {
       }
       router.push("/dashboard");
     } else {
-      setError("Invalid email or password. (Hint: user@ticktock.com / password123)");
+      setError("Invalid email or password.");
     }
   };
 
