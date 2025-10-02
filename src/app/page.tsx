@@ -10,7 +10,7 @@ const Login: React.FC = () => {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
+  const [remember, setRemember] = useState(false);
   const [error, setError] = useState("");
 
   const handleSubmit = (e: FormEvent) => {
@@ -19,7 +19,7 @@ const Login: React.FC = () => {
 
     if (email === DUMMY_EMAIL && password === DUMMY_PASSWORD) {
       const dummyToken = "dummy-auth-token-12345";
-      if (rememberMe) {
+      if (remember) {
         localStorage.setItem("authToken", dummyToken);
       } else {
         sessionStorage.setItem("authToken", dummyToken);
@@ -56,22 +56,19 @@ const Login: React.FC = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full text-black px-3 py-3 border rounded-md shadow-sm"
               />
-
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center">
                 <input
-                  id="rememberMe"
+                  id="remember"
                   type="checkbox"
-                  checked={rememberMe}
-                  onChange={(e) => setRememberMe(e.target.checked)}
+                  checked={remember}
+                  onChange={() => setRemember(!remember)}
                   className="h-4 w-4 text-blue-600 border-gray-300 rounded"
                 />
-                <label htmlFor="rememberMe" className="text-sm text-gray-700">
-                  Remember Me
+                <label htmlFor="remember" className="ml-2 text-sm text-gray-700">
+                  Remember me
                 </label>
               </div>
-
               {error && <p className="text-sm text-red-600">{error}</p>}
-
               <button
                 type="submit"
                 className="w-full py-3 px-4 rounded-md bg-blue-600 text-white hover:bg-blue-700"
@@ -82,7 +79,6 @@ const Login: React.FC = () => {
           </div>
         </div>
       </div>
-
       <div className="hidden lg:flex w-1/2 bg-blue-600 items-center justify-center p-24">
         <div className="text-white">
           <h2 className="text-6xl font-bold mb-8">ticktock</h2>
